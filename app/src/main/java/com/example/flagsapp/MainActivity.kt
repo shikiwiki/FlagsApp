@@ -2,20 +2,17 @@ package com.example.flagsapp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.flagsapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    val austriaFlag: ImageView by lazy { findViewById(R.id.austria) }
-    val polandFlag: ImageView by lazy { findViewById(R.id.poland) }
-    val italyFlag: ImageView by lazy { findViewById(R.id.italy) }
-    val columbiaFlag: ImageView by lazy { findViewById(R.id.columbia) }
-    val madagascarFlag: ImageView by lazy { findViewById(R.id.madagascar) }
-    val thailandFlag: ImageView by lazy { findViewById(R.id.thailand) }
-    val denmarkFlag: ImageView by lazy { findViewById(R.id.denmark) }
-    val switzerlandFlag: ImageView by lazy { findViewById(R.id.switzerland) }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var countries: ArrayList<Country>
+    private lateinit var flags: Array<Int>
+    private lateinit var names: Array<String>
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,25 +20,41 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        showPicture(getUrl(R.string.austriaUrl), austriaFlag)
-        showPicture(getUrl(R.string.polandUrl), polandFlag)
-        showPicture(getUrl(R.string.italyUrl), italyFlag)
-        showPicture(getUrl(R.string.columbiaUrl), columbiaFlag)
-        showPicture(getUrl(R.string.madagascarUrl), madagascarFlag)
-        showPicture(getUrl(R.string.thailandUrl), thailandFlag)
-        showPicture(getUrl(R.string.denmarkUrl), denmarkFlag)
-        showPicture(getUrl(R.string.switzerlandUrl), switzerlandFlag)
+        flags = arrayOf(
+            R.drawable.flag_of_austria_svg,
+            R.drawable.flag_of_poland_svg,
+            R.drawable.flag_of_italy_svg,
+            R.drawable.flag_of_colombia_svg,
+            R.drawable.flag_of_madagascar_svg,
+            R.drawable.flag_of_thailand_svg,
+            R.drawable.flag_of_denmark_svg,
+            R.drawable.flag_of_switzerland__pantone__svg
+        )
+
+        names = arrayOf(
+            "Austria",
+            "Poland",
+            "Italy",
+            "Columbia",
+            "Madagascar",
+            "Thailand",
+            "Denmark",
+            "Switzerland"
+        )
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+
+        countries = arrayListOf<Country>()
+        getCountries()
     }
 
-    private fun getUrl(resource: Int): String {
-        return applicationContext.getString(resource)
+    private fun getCountries() {
+        for (i in flags.indices) {
+            val country = Country(names[i], flags[i])
+            countries.add(country)
+        }
+        recyclerView.adapter = CountryAdapter(countries)
     }
-
-    fun showPicture(url: String, imageView: ImageView) {
-
-        Glide.with(this@MainActivity)
-            .load(url)
-            .into(imageView)
-    }
-
 }
