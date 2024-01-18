@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FlagsApp</string>
+    <string name="austria">Austria</string>
+    <string name="austriaUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/250px-Flag_of_Austria.svg.png</string>
+    <string name="poland">Poland</string>
+    <string name="polandUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/250px-Flag_of_Poland.svg.png</string>
+    <string name="italy">Italy</string>
+    <string name="italyUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/2560px-Flag_of_Italy.svg.png</string>
+    <string name="columbia">Columbia</string>
+    <string name="columbiaUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/250px-Flag_of_Colombia.svg.png</string>
+    <string name="madagascar">Madagascar</string>
+    <string name="madagascarUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Madagascar.svg/240px-Flag_of_Madagascar.svg.png</string>
+    <string name="thailand">Thailand</string>
+    <string name="thailandUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/250px-Flag_of_Thailand.svg.png</string>
+    <string name="denmark">Denmark</string>
+    <string name="denmarkUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/250px-Flag_of_Denmark.svg.png</string>
+    <string name="switzerland">Switzerland</string>
+    <string name="switzerlandUrl">https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/250px-Flag_of_Switzerland_%28Pantone%29.svg.png</string>
+</resources>
