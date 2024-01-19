@@ -1,6 +1,5 @@
 package com.example.flagsapp
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,5 +31,4 @@ class CountryAdapter(private val countries: ArrayList<Country>) :
         val flag: ImageView = itemView.findViewById(R.id.flag)
 
     }
-
 }
